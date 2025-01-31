@@ -11,15 +11,25 @@
 	<body>
 		<form> 
 			<select id="colorSelect"> 
-				<option>Red</option> 
-				<option>Green</option> 
-				<option>White</option> 
-				<option>Black</option> 
+				<option value="Red">Red</option> 
+				<option value="Green">Green</option> 
+				<option value="White">White</option> 
+				<option value="Black">Black</option> 
 			</select> 
-			<input type="button" value="Select and Remove"> 
+			<input type="button" value="Select and Remove" onclick="removeSelectedColor"> 
 		</form>
 
 		<script type="text/javascript" src="./script.js">
+			function removeSelectedColor(){
+				const colorSelect = document. getDElementById("colorSelect");
+				 const selectedIndex = colorSelect.selectedIndex;
+
+      if (selectedIndex !== -1) {
+        colorSelect.remove(selectedIndex);
+      } else {
+        alert("Please select a color to remove.");
+      }
+			}
 		</script>
 
 	</body>
